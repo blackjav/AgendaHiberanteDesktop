@@ -29,6 +29,13 @@ public class Contacto implements Serializable{
     public Contacto() {
     }
 
+    public Contacto(String nombre, String apellido, String numero, String descripcion) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.numero = numero;
+        this.descripcion = descripcion;
+    }
+
     public int getId() {
         return id;
     }

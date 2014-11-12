@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+    <!--Mapeo de la version 4.3.7.Final-->
+<!--
+ <!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">-->
+        
+        <!--Configuracion de la verion 4.3.7.Final-->
+<!--        
+        <!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">-->
+<hibernate-configuration>
+    
+   <session-factory>
+       
+       <!--Parametros de conexion-->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost/hibernateTest</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
+        
+        <!--Pool de conexion y dialecto de la base de datos-->
+        <property name="connection.pool_size">1</property>
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        
+        <!--Modo de consultas y creacion al cargar la aplicacion--> 
+        <property name="show_sql">true</property>
+        <property name="hbm2ddl.auto">create-drop</property>
+        
+        <!--Mappeo de entidades (anontaciones)-->
+        <mapping class="modelo.entity.Contacto" />
+   </session-factory>
+    
+</hibernate-configuration>
