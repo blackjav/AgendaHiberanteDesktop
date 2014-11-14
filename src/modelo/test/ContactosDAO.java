@@ -41,13 +41,16 @@ public class ContactosDAO {
         try
         {
             iniciaOperacion();
-            id = (Long)sesion.save(contacto);
+            sesion.save(contacto);
             tx.commit();
         }catch(HibernateException he)
             
         {
             manejaExcepcion(he);
             throw he;
+        }finally{
+            sesion.close();
+//            System.out.println("Entro a esta parte del bloque"+ sesion.getSessionFactory());
         }
         
     return id;
@@ -64,7 +67,11 @@ public class ContactosDAO {
         {
             manejaExcepcion(he);
             throw he;
+        }finally
+        {
+            sesion.close();
         }
+        
        
     }
     

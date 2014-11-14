@@ -13,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "contactos")
 public class Contacto implements Serializable{
@@ -20,6 +21,7 @@ public class Contacto implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    
     
     private String nombre;
     private String apellido;
@@ -76,10 +78,6 @@ public class Contacto implements Serializable{
         this.descripcion = descripcion;
     }
 
-    @Override
-    public String toString() {
-        return "Contacto{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", numero=" + numero + ", descripcion=" + descripcion + '}';
-    }
-    
+   
     
 }
