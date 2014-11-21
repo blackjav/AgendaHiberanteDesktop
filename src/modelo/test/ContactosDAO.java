@@ -37,11 +37,11 @@ public class ContactosDAO {
     
     public long guardaContacto(Contacto contacto)
     {
-        long id = 0;
+        long id=0;
         try
         {
             iniciaOperacion();
-            sesion.save(contacto);
+            id = (long)sesion.save(contacto);
             tx.commit();
         }catch(HibernateException he)
             
@@ -86,6 +86,9 @@ public class ContactosDAO {
         {
             manejaExcepcion(he);
             throw he;
+        }finally
+        {
+            sesion.close();
         }
     }
     
